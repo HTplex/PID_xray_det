@@ -49,16 +49,22 @@ def single_gpu_test(model,
                     out_file = osp.join(out_dir, img_meta['ori_filename'])
                 else:
                     out_file = None
-
+                # try:    
+                    # print(PALETTE)
+                from pprint import pprint
+                
                 model.module.show_result(
                     img_show,
                     result[i],
-                    bbox_color=PALETTE,
-                    text_color=PALETTE,
-                    mask_color=PALETTE,
+                    bbox_color=(72, 101, 241),
+                    text_color=(72, 101, 241),
+                    mask_color=None,
                     show=show,
                     out_file=out_file,
                     score_thr=show_score_thr)
+                # except ValueError:
+                #     print('ValueError on show_result')
+                    
 
         # encode mask results
         if isinstance(result[0], tuple):

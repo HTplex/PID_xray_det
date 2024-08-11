@@ -297,57 +297,57 @@ def imshow_det_bboxes(img,
     text_colors = [text_palette[label] for label in labels]
 
     num_bboxes = 0
-    # if bboxes is not None:
-    #     num_bboxes = bboxes.shape[0]
-    #     bbox_palette = palette_val(get_palette(bbox_color, max_label + 1))
-    #     colors = [bbox_palette[label] for label in labels[:num_bboxes]]
-    #     draw_bboxes(ax, bboxes, colors, alpha=0.8, thickness=thickness)
-    #
-    #     horizontal_alignment = 'left'
-    #     positions = bboxes[:, :2].astype(np.int32) + thickness
-    #     areas = (bboxes[:, 3] - bboxes[:, 1]) * (bboxes[:, 2] - bboxes[:, 0])
-    #     scales = _get_adaptive_scales(areas)
-    #     scores = bboxes[:, 4] if bboxes.shape[1] == 5 else None
-    #     draw_labels(
-    #         ax,
-    #         labels[:num_bboxes],
-    #         positions,
-    #         scores=scores,
-    #         class_names=class_names,
-    #         color=text_colors,
-    #         font_size=font_size,
-    #         scales=scales,
-    #         horizontal_alignment=horizontal_alignment)
+    if bboxes is not None:
+        num_bboxes = bboxes.shape[0]
+        bbox_palette = palette_val(get_palette(bbox_color, max_label + 1))
+        colors = [bbox_palette[label] for label in labels[:num_bboxes]]
+        draw_bboxes(ax, bboxes, colors, alpha=0.8, thickness=thickness)
+    
+        horizontal_alignment = 'left'
+        positions = bboxes[:, :2].astype(np.int32) + thickness
+        areas = (bboxes[:, 3] - bboxes[:, 1]) * (bboxes[:, 2] - bboxes[:, 0])
+        scales = _get_adaptive_scales(areas)
+        scores = bboxes[:, 4] if bboxes.shape[1] == 5 else None
+        draw_labels(
+            ax,
+            labels[:num_bboxes],
+            positions,
+            scores=scores,
+            class_names=class_names,
+            color=text_colors,
+            font_size=font_size,
+            scales=scales,
+            horizontal_alignment=horizontal_alignment)
 
     if segms is not None:
         mask_palette = get_palette(mask_color, max_label + 1)
         colors = [mask_palette[label] for label in labels]
         colors = np.array(colors, dtype=np.uint8)
         # draw_masks(ax, img, segms, colors, with_edge=True)
-        draw_masks(ax, img, segms, colors, with_edge=True, alpha=0.5) # 调整alpha,默认alpha有点大，导致输出看不清
+        draw_masks(ax, img, segms, colors, with_edge=True, alpha=0.3)
 
-        # if num_bboxes < segms.shape[0]:
-        #     segms = segms[num_bboxes:]
-        #     horizontal_alignment = 'center'
-        #     areas = []
-        #     positions = []
-        #     for mask in segms:
-        #         _, _, stats, centroids = cv2.connectedComponentsWithStats(
-        #             mask.astype(np.uint8), connectivity=8)
-        #         largest_id = np.argmax(stats[1:, -1]) + 1
-        #         positions.append(centroids[largest_id])
-        #         areas.append(stats[largest_id, -1])
-        #     areas = np.stack(areas, axis=0)
-        #     scales = _get_adaptive_scales(areas)
-        #     draw_labels(
-        #         ax,
-        #         labels[num_bboxes:],
-        #         positions,
-        #         class_names=class_names,
-        #         color=text_colors,
-        #         font_size=font_size,
-        #         scales=scales,
-        #         horizontal_alignment=horizontal_alignment)
+        if num_bboxes < segms.shape[0]:
+            segms = segms[num_bboxes:]
+            horizontal_alignment = 'center'
+            areas = []
+            positions = []
+            for mask in segms:
+                _, _, stats, centroids = cv2.connectedComponentsWithStats(
+                    mask.astype(np.uint8), connectivity=8)
+                largest_id = np.argmax(stats[1:, -1]) + 1
+                positions.append(centroids[largest_id])
+                areas.append(stats[largest_id, -1])
+            areas = np.stack(areas, axis=0)
+            scales = _get_adaptive_scales(areas)
+            draw_labels(
+                ax,
+                labels[num_bboxes:],
+                positions,
+                class_names=class_names,
+                color=text_colors,
+                font_size=font_size,
+                scales=scales,
+                horizontal_alignment=horizontal_alignment)
 
     plt.imshow(img)
 

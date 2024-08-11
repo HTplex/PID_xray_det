@@ -335,6 +335,8 @@ class BaseDetector(BaseModule, metaclass=ABCMeta):
         if out_file is not None:
             show = False
         # draw bounding boxes
+        print(bbox_color, text_color, mask_color, thickness, font_size)
+        print(bboxes)
         img = imshow_det_bboxes(
             img,
             bboxes,
