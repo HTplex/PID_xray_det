@@ -1,0 +1,273 @@
+Metadata-Version: 2.1
+Name: mmdet
+Version: 2.25.0
+Summary: OpenMMLab Detection Toolbox and Benchmark
+Home-page: https://github.com/open-mmlab/mmdetection
+Author: MMDetection Contributors
+Author-email: openmmlab@gmail.com
+License: Apache License 2.0
+Keywords: computer vision,object detection
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pycocotools
+Requires-Dist: six
+Requires-Dist: terminaltables
+Provides-Extra: all
+Requires-Dist: addict==2.4.0; extra == "all"
+Requires-Dist: appdirs==1.4.4; extra == "all"
+Requires-Dist: asynctest==0.13.0; extra == "all"
+Requires-Dist: attributee==0.1.5; extra == "all"
+Requires-Dist: attrs==21.4.0; extra == "all"
+Requires-Dist: certifi==2022.5.18.1; extra == "all"
+Requires-Dist: charset-normalizer==2.0.12; extra == "all"
+Requires-Dist: cityscapesScripts==2.2.0; extra == "all"
+Requires-Dist: click==7.1.2; extra == "all"
+Requires-Dist: codecov~=2.1.12; extra == "all"
+Requires-Dist: colorama==0.4.4; extra == "all"
+Requires-Dist: coloredlogs==15.0.1; extra == "all"
+Requires-Dist: coverage==6.4.1; extra == "all"
+Requires-Dist: cycler==0.11.0; extra == "all"
+Requires-Dist: Cython==0.29.30; extra == "all"
+Requires-Dist: dotty-dict==1.3.0; extra == "all"
+Requires-Dist: flake8==4.0.1; extra == "all"
+Requires-Dist: flatbuffers==2.0; extra == "all"
+Requires-Dist: fonttools==4.33.3; extra == "all"
+Requires-Dist: humanfriendly==10.0; extra == "all"
+Requires-Dist: idna==3.3; extra == "all"
+Requires-Dist: imagecorruptions==1.1.2; extra == "all"
+Requires-Dist: imageio==2.19.3; extra == "all"
+Requires-Dist: importlib-metadata==4.11.4; extra == "all"
+Requires-Dist: iniconfig==1.1.1; extra == "all"
+Requires-Dist: interrogate==1.5.0; extra == "all"
+Requires-Dist: isort==4.3.21; extra == "all"
+Requires-Dist: joblib==1.1.0; extra == "all"
+Requires-Dist: kiwisolver==1.4.2; extra == "all"
+Requires-Dist: kwarray==0.6.0; extra == "all"
+Requires-Dist: lap==0.4.0; extra == "all"
+Requires-Dist: Markdown==3.3.7; extra == "all"
+Requires-Dist: matplotlib==3.5.2; extra == "all"
+Requires-Dist: mccabe==0.6.1; extra == "all"
+Requires-Dist: mmcls==0.23.1; extra == "all"
+Requires-Dist: mmcv-full==1.5.2; extra == "all"
+Requires-Dist: mmdet==2.25.0; extra == "all"
+Requires-Dist: mmtrack==0.13.0; extra == "all"
+Requires-Dist: model-index==0.1.11; extra == "all"
+Requires-Dist: motmetrics==1.2.5; extra == "all"
+Requires-Dist: networkx==2.8.3; extra == "all"
+Requires-Dist: numpy==1.22.4; extra == "all"
+Requires-Dist: onnxruntime~=1.18.1; extra == "all"
+Requires-Dist: opencv-python==4.5.5.64; extra == "all"
+Requires-Dist: openmim==0.1.5; extra == "all"
+Requires-Dist: ordered-set==4.1.0; extra == "all"
+Requires-Dist: packaging==21.3; extra == "all"
+Requires-Dist: pandas==1.3.5; extra == "all"
+Requires-Dist: Pillow==9.1.1; extra == "all"
+Requires-Dist: pip==21.2.4; extra == "all"
+Requires-Dist: pluggy==1.0.0; extra == "all"
+Requires-Dist: protobuf==3.20.1; extra == "all"
+Requires-Dist: py==1.11.0; extra == "all"
+Requires-Dist: pycocotools==2.0.7; extra == "all"
+Requires-Dist: pycodestyle==2.8.0; extra == "all"
+Requires-Dist: pyflakes==2.4.0; extra == "all"
+Requires-Dist: pyparsing==3.0.9; extra == "all"
+Requires-Dist: pyquaternion==0.9.9; extra == "all"
+Requires-Dist: pytest==7.1.2; extra == "all"
+Requires-Dist: python-dateutil==2.8.2; extra == "all"
+Requires-Dist: pytz==2022.1; extra == "all"
+Requires-Dist: PyWavelets==1.3.0; extra == "all"
+Requires-Dist: PyYAML==6.0; extra == "all"
+Requires-Dist: requests==2.27.1; extra == "all"
+Requires-Dist: scikit-image==0.19.2; extra == "all"
+Requires-Dist: scikit-learn==1.1.1; extra == "all"
+Requires-Dist: scipy==1.7.3; extra == "all"
+Requires-Dist: seaborn==0.11.2; extra == "all"
+Requires-Dist: setuptools==61.2.0; extra == "all"
+Requires-Dist: setuptools-scm==6.4.2; extra == "all"
+Requires-Dist: six==1.16.0; extra == "all"
+Requires-Dist: sklearn==0.0; extra == "all"
+Requires-Dist: tabulate==0.8.9; extra == "all"
+Requires-Dist: terminaltables==3.1.10; extra == "all"
+Requires-Dist: threadpoolctl==3.1.0; extra == "all"
+Requires-Dist: tifffile==2022.5.4; extra == "all"
+Requires-Dist: timm==0.5.4; extra == "all"
+Requires-Dist: toml==0.10.2; extra == "all"
+Requires-Dist: tomli==2.0.1; extra == "all"
+Requires-Dist: torch==1.10.0; extra == "all"
+Requires-Dist: torchaudio~=0.10.0; extra == "all"
+Requires-Dist: torchvision~=0.11.0; extra == "all"
+Requires-Dist: tqdm==4.64.0; extra == "all"
+Requires-Dist: typing==3.7.4.3; extra == "all"
+Requires-Dist: typing_extensions==4.2.0; extra == "all"
+Requires-Dist: ubelt==1.1.0; extra == "all"
+Requires-Dist: urllib3==1.26.9; extra == "all"
+Requires-Dist: wheel==0.37.1; extra == "all"
+Requires-Dist: xdoctest==1.0.0; extra == "all"
+Requires-Dist: xmltodict==0.13.0; extra == "all"
+Requires-Dist: yapf==0.32.0; extra == "all"
+Requires-Dist: zipp==3.8.0; extra == "all"
+Provides-Extra: tests
+Requires-Dist: asynctest; extra == "tests"
+Requires-Dist: codecov; extra == "tests"
+Requires-Dist: flake8; extra == "tests"
+Requires-Dist: interrogate; extra == "tests"
+Requires-Dist: isort==4.3.21; extra == "tests"
+Requires-Dist: kwarray; extra == "tests"
+Requires-Dist: mmtrack; extra == "tests"
+Requires-Dist: onnx==1.7.0; extra == "tests"
+Requires-Dist: onnxruntime>=1.8.0; extra == "tests"
+Requires-Dist: protobuf<=3.20.1; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: ubelt; extra == "tests"
+Requires-Dist: xdoctest>=0.10.0; extra == "tests"
+Requires-Dist: yapf; extra == "tests"
+Provides-Extra: build
+Requires-Dist: cython; extra == "build"
+Requires-Dist: numpy; extra == "build"
+Provides-Extra: optional
+Requires-Dist: cityscapesscripts; extra == "optional"
+Requires-Dist: imagecorruptions; extra == "optional"
+Requires-Dist: scipy; extra == "optional"
+Requires-Dist: sklearn; extra == "optional"
+Requires-Dist: timm; extra == "optional"
+
+#  PIDray: A Large-scale X-ray Benchmark for Real-World Prohibited Item Detection 
+
+## Abstract
+
+ Automatic security inspection relying on computer vision technology is a challenging task in realworld scenarios due to many factors, such as intra-class variance, class imbalance, and occlusion. Most previous methods rarely touch the cases where the prohibited items are deliberately hidden in messy objects because of the scarcity of large-scale datasets, hindering their applications. To address this issue and facilitate related research, we present a large-scale dataset, named PIDray, which covers various cases in real-world scenarios for prohibited item detection, especially for deliberately hidden items. In specific, PIDray collects 124, 486 X-ray images for 12 categories of prohibited items, and each image is manually annotated with careful inspection, which makes it, to our best knowledge, to largest prohibited items detection dataset to date. Meanwhile, we propose a general divide-andconquer pipeline to develop baseline algorithms on PIDray. Specifically, we adopt the tree-like structure to suppress the influence of the long-tailed issue in the PIDray dataset, where the first course-grained node is tasked with the binary classification to alleviate the influence of head category, while the subsequent fine-grained node is dedicated to the specific tasks of the tail categories. Based on this simple yet effective scheme, we offer strong task-specific baselines across object detection, instance segmentation, and multi-label classification tasks and verify the generalization ability on common datasets (e.g., COCO and PASCAL VOC). Extensive experiments on PIDray demonstrate that the proposed method performs favorably against current state-of-the-art methods, especially for deliberately hidden items. 
+
+
+
+## Dataset
+
+### Sample
+
+![](./docs/image_samples.png)
+
+<img src="./docs/easy_hard_hidden.jpg" style="zoom:50%;" />
+
+
+
+### Statistics
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2" style="text-align: center;">Mode</th>
+    <th rowspan="2" style="text-align: center;">Train</th>
+    <th colspan="3" style="text-align: center;">Test</th>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Easy</th>
+    <th style="text-align: center;">Hard</th>
+    <th style="text-align: center;">Hidden</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="text-align: center;">Count</td>
+    <td style="text-align: center;">76,913</td>
+    <td style="text-align: center;">24,758</td>
+    <td style="text-align: center;">9,746</td>
+    <td style="text-align: center;">13,069</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">Total</td>
+    <td colspan="4" style="text-align: center;">124,486</td>
+  </tr>
+</tbody>
+</table>
+
+![](./docs/label_statistics.jpg)
+
+
+
+### Dataset Download
+
+Google Drive: https://drive.google.com/drive/folders/1zvMIc1bqteRN9Z36hHYpoTGoZArsh4mE
+
+Baidu Netdisk: https://pan.baidu.com/s/1qPUNWYItg08pht0kFn8qxg  code: 8vz6
+
+
+
+### Model weights
+
+Google Drive: https://drive.google.com/drive/folders/1zvMIc1bqteRN9Z36hHYpoTGoZArsh4mE
+
+Baidu Netdisk: https://pan.baidu.com/s/1JHmMIIf_SoQ7o1HsneT_tg  code: brkx
+
+
+
+## Our results on PIDray
+
+### Object detection and instance segmentation
+
+![](./docs/detection_result.jpg)
+
+
+
+### Multi-label classification
+
+<img src="./docs/multilabel_result.jpg" style="zoom:50%;" />
+
+
+
+## Installation
+
+
+Our code is based on mmdetection V2.25. We recommend you to follow their instruction to build the environment. We also provide the *requirements.txt* of our environment.
+
+```
+conda create --name pid python=3.8 pip
+conda activate pid
+pip install torch==1.10.0 torchvision==0.11.2
+pip install mmdet==2.25
+pip install mmcv=1.5.2
+pip install mmcv-full==1.5.2 --no-cache-dir --no-binary :all:
+
+```
+mmcv._ext thing means mmcv needs to rebuild after torch is installed
+
+
+
+
+## Reproduce Our Results
+
+1. Change the data path in the director, *configs*.
+
+2. Train the model use the command. We also provide our model_weights.
+
+   ```bash
+   CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 sh ./tools/dist_train.sh ./configs/cascade_mask_rcnn_r101_with_R0R1.py 8
+   
+   ```
+
+3. Test the model use the commad.
+
+   ```bash
+   CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 sh ./tools/dist_test.sh ./configs/cascade_mask_rcnn_r101_with_R0R1.py ./model_weights/cascade_mask_rcnn_r101_with_R0R1.pth 8 --out ./result.pkl --eval bbox segm
+   ```
+
+   ```python
+    python tools/test.py --show-dir ./tmp/ 
+    --config ./configs/cascade_mask_rcnn_r101_with_R0R1_2.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/cascade_mask_rcnn_r101_with_R0R1.pth --show-dir ./tmp/
+
+    python tools/test.py --config ./configs/ddod_r101_with_R0R1.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/ddod_r101_with_R0R1.pth --show-dir ./tmp/
+    
+   ```
+
+
+
+
+## Acknowledgments
+
+We sincerely thank [mmdetection](https://github.com/open-mmlab/mmdetection) for being open source.  We also greatly thank the anounymous reviewers for the constructive comments to help us improve the paper.

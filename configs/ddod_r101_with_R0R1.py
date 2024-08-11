@@ -40,8 +40,8 @@ data = dict(
     workers_per_gpu=4,
     train=dict(
         type='CocoDataset',
-        ann_file='/mnt/PIDray/annotations/train.json',
-        img_prefix='/mnt/PIDray/train/',
+        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/train.json',
+        img_prefix='/Users/htplex/Desktop/data_new/datasets/PIDray/train/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True, with_mask=True),
@@ -58,8 +58,8 @@ data = dict(
         ]),
     val=dict(
         type='CocoDataset',
-        ann_file='/mnt/PIDray/annotations/test.json',
-        img_prefix='/mnt/PIDray/test/',
+        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test.json',
+        img_prefix='/Users/htplex/Desktop/data_new/datasets/PIDray/test/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(
@@ -81,8 +81,8 @@ data = dict(
         ]),
     test=dict(
         type='CocoDataset',
-        ann_file='/mnt/PIDray/annotations/test.json',
-        img_prefix='/mnt/PIDray/test/',
+        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test.json',
+        img_prefix='/Users/htplex/Desktop/data_new/datasets/PIDray/test/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(

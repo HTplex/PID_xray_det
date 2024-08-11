@@ -7,7 +7,7 @@ certifi==2022.5.18.1
 charset-normalizer==2.0.12
 cityscapesScripts==2.2.0
 click==7.1.2
-codecov==2.1.12
+codecov~=2.1.12
 colorama==0.4.4
 coloredlogs==15.0.1
 coverage==6.4.1
@@ -40,8 +40,8 @@ model-index==0.1.11
 motmetrics==1.2.5
 networkx==2.8.3
 numpy==1.22.4
-onnx==1.7.0
-onnxruntime==1.11.1
+# onnx==1.7.0 
+onnxruntime~=1.18.1
 opencv-python==4.5.5.64
 openmim==0.1.5
 ordered-set==4.1.0
@@ -52,7 +52,7 @@ pip==21.2.4
 pluggy==1.0.0
 protobuf==3.20.1
 py==1.11.0
-pycocotools==2.0.2
+pycocotools==2.0.7
 pycodestyle==2.8.0
 pyflakes==2.4.0
 pyparsing==3.0.9
@@ -78,9 +78,9 @@ tifffile==2022.5.4
 timm==0.5.4
 toml==0.10.2
 tomli==2.0.1
-torch==1.10.0+cu111
-torchaudio==0.10.0+rocm4.1
-torchvision==0.11.0+cu111
+torch==1.10.0
+torchaudio~=0.10.0
+torchvision~=0.11.0
 tqdm==4.64.0
 typing==3.7.4.3
 typing_extensions==4.2.0

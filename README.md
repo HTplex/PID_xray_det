@@ -82,7 +82,26 @@ Baidu Netdisk: https://pan.baidu.com/s/1JHmMIIf_SoQ7o1HsneT_tg  code: brkx
 
 ## Installation
 
+
 Our code is based on mmdetection V2.25. We recommend you to follow their instruction to build the environment. We also provide the *requirements.txt* of our environment.
+
+```
+conda create --name pid python=3.8 pip
+conda activate pid
+pip install torch==1.10.0 torchvision==0.11.2
+pip install mmdet==2.25
+pip install mmcv=1.5.2
+pip install mmcv-full==1.5.2 --no-cache-dir --no-binary :all:
+pip install -e .
+
+```
+mmcv._ext thing means mmcv needs to rebuild after torch is installed
+
+## changes
+
+1. re-add setup.py so that customization can be added
+2. add clear install instructions
+
 
 
 
@@ -102,6 +121,15 @@ Our code is based on mmdetection V2.25. We recommend you to follow their instruc
    ```bash
    CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 sh ./tools/dist_test.sh ./configs/cascade_mask_rcnn_r101_with_R0R1.py ./model_weights/cascade_mask_rcnn_r101_with_R0R1.pth 8 --out ./result.pkl --eval bbox segm
    ```
+
+   ```python
+    python tools/test.py --show-dir ./tmp/ 
+    --config ./configs/cascade_mask_rcnn_r101_with_R0R1_2.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/cascade_mask_rcnn_r101_with_R0R1.pth --show-dir ./tmp/
+
+    python tools/test.py --config ./configs/ddod_r101_with_R0R1.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/ddod_r101_with_R0R1.pth --show-dir ./tmp/
+    
+   ```
+
 
 
 
