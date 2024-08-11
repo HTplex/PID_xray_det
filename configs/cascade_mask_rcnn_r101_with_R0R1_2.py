@@ -256,7 +256,7 @@ data = dict(
         ]),
     val=dict(
         type='CocoDataset',
-        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test.json',
+        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test_hard.json',
         img_prefix='/Users/htplex/Desktop/data_new/datasets/PIDray/test/',
         pipeline=[
             dict(type='LoadImageFromFile'),
@@ -279,7 +279,7 @@ data = dict(
         ]),
     test=dict(
         type='CocoDataset',
-        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test.json',
+        ann_file='/Users/htplex/Desktop/data_new/datasets/PIDray/annotations/test_hard.json',
         img_prefix='/Users/htplex/Desktop/data_new/datasets/PIDray/test/',
         pipeline=[
             dict(type='LoadImageFromFile'),
