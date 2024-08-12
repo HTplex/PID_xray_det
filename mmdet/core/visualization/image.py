@@ -154,7 +154,7 @@ def draw_labels(ax,
                 'edgecolor': 'none'
             },
             color=text_color,
-            fontsize=font_size_mask,
+            fontsize=5,
             verticalalignment='top',
             horizontalalignment=horizontal_alignment)
 
@@ -265,7 +265,7 @@ def imshow_det_bboxes(img,
         'segms and bboxes should not be None at the same time.'
 
     img = mmcv.imread(img).astype(np.uint8)
-
+    font_size = 8
     if score_thr > 0:
         assert bboxes is not None and bboxes.shape[1] == 5
         scores = bboxes[:, -1]
@@ -324,7 +324,7 @@ def imshow_det_bboxes(img,
         colors = [mask_palette[label] for label in labels]
         colors = np.array(colors, dtype=np.uint8)
         # draw_masks(ax, img, segms, colors, with_edge=True)
-        draw_masks(ax, img, segms, colors, with_edge=True, alpha=0.3)
+        draw_masks(ax, img, segms, colors, with_edge=True, alpha=0.5)
 
         if num_bboxes < segms.shape[0]:
             segms = segms[num_bboxes:]
@@ -339,13 +339,14 @@ def imshow_det_bboxes(img,
                 areas.append(stats[largest_id, -1])
             areas = np.stack(areas, axis=0)
             scales = _get_adaptive_scales(areas)
+            
             draw_labels(
                 ax,
                 labels[num_bboxes:],
                 positions,
                 class_names=class_names,
                 color=text_colors,
-                font_size=font_size,
+                font_size=5,
                 scales=scales,
                 horizontal_alignment=horizontal_alignment)
 

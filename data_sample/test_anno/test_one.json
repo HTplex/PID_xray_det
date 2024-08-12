@@ -1,0 +1,65 @@
+{
+    "annotations": [],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Baton"
+        },
+        {
+            "id": 2,
+            "name": "Pliers"
+        },
+        {
+            "id": 3,
+            "name": "Hammer"
+        },
+        {
+            "id": 4,
+            "name": "Powerbank"
+        },
+        {
+            "id": 5,
+            "name": "Scissors"
+        },
+        {
+            "id": 6,
+            "name": "Wrench"
+        },
+        {
+            "id": 7,
+            "name": "Gun"
+        },
+        {
+            "id": 8,
+            "name": "Bullet"
+        },
+        {
+            "id": 9,
+            "name": "Sprayer"
+        },
+        {
+            "id": 10,
+            "name": "HandCuffs"
+        },
+        {
+            "id": 11,
+            "name": "Knife"
+        },
+        {
+            "id": 12,
+            "name": "Lighter"
+        }
+    ],
+    "images": [
+        {
+            "file_name": "sample.jpg",
+            "height": 448,
+            "id": 0,
+            "width": 540
+        }
+    ],
+    "info": "spytensor created",
+    "license": [
+        "license"
+    ]
+}

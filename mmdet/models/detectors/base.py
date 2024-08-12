@@ -334,9 +334,6 @@ class BaseDetector(BaseModule, metaclass=ABCMeta):
         # if out_file specified, do not show image in window
         if out_file is not None:
             show = False
-        # draw bounding boxes
-        print(bbox_color, text_color, mask_color, thickness, font_size)
-        print(bboxes)
         img = imshow_det_bboxes(
             img,
             bboxes,
@@ -348,7 +345,7 @@ class BaseDetector(BaseModule, metaclass=ABCMeta):
             text_color=text_color,
             mask_color=mask_color,
             thickness=thickness,
-            font_size=font_size,
+            font_size=15,
             win_name=win_name,
             show=show,
             wait_time=wait_time,
