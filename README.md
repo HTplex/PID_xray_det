@@ -130,6 +130,7 @@ mmcv._ext thing means mmcv needs to rebuild after torch is installed
 
     python tools/test.py --config ./configs/ddod_r101_with_R0R1.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/ddod_r101_with_R0R1.pth --show-dir ./tmp/
     
+    python tools/test_one.py
    ```
 
 

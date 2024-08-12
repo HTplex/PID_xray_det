@@ -6,6 +6,9 @@ import time
 import warnings
 
 import cv2
+import numpy as np
+import gradio as gr
+    
 import mmcv
 import torch
 from mmengine import Config, DictAction
@@ -20,7 +23,7 @@ from mmdet.models import build_detector
 from mmdet.utils import (build_ddp, build_dp, compat_cfg, get_device,
                          replace_cfg_vals, setup_multi_processes,
                          update_data_root)
-
+from uuid import uuid4
 
 
 import json
@@ -30,6 +33,8 @@ def dirty_xray(img):
     # 2. run the test_one.py
     # 3. load visualization from tmp
     # 4. return the visualization
+    img_id = str(uuid4())
+    cv2.imwrite(f"./tmp/{img_id}_orig.jpg", img)
     
     cv2.imwrite("./data/test_img/sample.jpg", img)
     h,w = img.shape[:2]
@@ -181,12 +186,23 @@ def dirty_xray(img):
         if args.work_dir is not None and rank == 0:
             mmcv.dump(metric_dict, json_file)
             
-    return cv2.imread("./tmp/sample.jpg")
+    result = cv2.imread("./tmp/sample.jpg")
+    cv2.imwrite(f"./tmp/{img_id}_result.jpg", img)
+
+            
+    return result
     
 
 
 if __name__ == '__main__':
-    img = cv2.imread("/Users/htplex/Desktop/data_new/datasets/PIDray/test/xray_hard00069.png")
-    result = dirty_xray(img)
-    print(result.shape)
-    cv2.imshow("result", result)
+    # local demo
+    # img = cv2.imread("/Users/htplex/Desktop/data_new/datasets/PIDray/test/xray_hard00069.png")
+    # result = dirty_xray(img)
+    # print(result.shape)
+    # cv2.imshow("result", result)
+    
+    # gradio demo
+
+
+    demo = gr.Interface(dirty_xray, gr.Image(), "image")
+    demo.launch(server_name="0.0.0.0", server_port=7878)
