@@ -95,9 +95,11 @@ conda create --name pid python=3.8 pip
 conda activate pid
 pip install torch==1.10.0 torchvision==0.11.2
 pip install mmdet==2.25
-pip install mmcv=1.5.2
-pip install mmcv-full==1.5.2 --no-cache-dir --no-binary :all:
+pip install mmcv==1.5.2
+pip install mmengine
+CUDA_VISIBLE_DEVICES=-1 pip install mmcv-full==1.5.2 --no-cache-dir --no-binary :all:
 pip install -e .
+pip install gradio
 
 ```
 mmcv._ext thing means mmcv needs to rebuild after torch is installed
@@ -130,6 +132,7 @@ mmcv._ext thing means mmcv needs to rebuild after torch is installed
 
     python tools/test.py --config ./configs/ddod_r101_with_R0R1.py --checkpoint /Users/htplex/Desktop/data_new/datasets/PIDray/model_weights/ddod_r101_with_R0R1.pth --show-dir ./tmp/
     
+    # web demo
     python tools/test_one.py
    ```
 

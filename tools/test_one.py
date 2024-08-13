@@ -205,4 +205,5 @@ if __name__ == '__main__':
 
 
     demo = gr.Interface(dirty_xray, gr.Image(), "image")
-    demo.launch(server_name="0.0.0.0", server_port=7878)
+    # demo.launch(server_name="0.0.0.0", server_port=7878)
+    demo.launch(share=True)
